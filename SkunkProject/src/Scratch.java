@@ -7,7 +7,8 @@ public class Scratch
 	{
 		// TODO Auto-generated method stub
 
-		StdOut.print("hello");
+		System.out.println("hello");
+		StdOut.print("hey guys, this is me pushing the code. Let's work from here.");
 
 	}
 
