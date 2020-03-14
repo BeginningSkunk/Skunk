@@ -2,11 +2,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import edu.princeton.cs.introcs.StdOut;
+
 class TestDice {
 
 	@Test
 	void test1() {
-		fail("Not yet implemented");
+        testableDie die = new testableDie();
+        die.getLastRoll();
+        assertEquals(die.getLastRoll(), 6);
+    
 	}
 	@Test
 	void test2() {
@@ -25,6 +30,4 @@ class TestDice {
 		fail("Not yet implemented");
 	}
 	
-
-
 }
