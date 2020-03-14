@@ -2,8 +2,8 @@ import edu.princeton.cs.introcs.StdOut;
 
 public class testableDice {
 	private int lastRoll;
-	private Die die1;
-	private Die die2;
+	private testableDie die1;
+	private testableDie die2;
 
 	// Constructors (object initializers) also can be declared anywhere
 	// Convention: after instance fields/variables
@@ -13,12 +13,12 @@ public class testableDice {
 		// initialize instance variables die1 and die2 by
 		// creating a new instance of each
 
-		this.die1 = new Die();
-		this.die2 = new Die();
+		this.die1 = new testableDie();
+		this.die2 = new testableDie();
 		this.roll();
 	}
 
-	public testableDice(Die die1, Die die2) // overloaded constructor
+	public testableDice(testableDie die1, testableDie die2) // overloaded constructor
 	{
 		this.die1 = die1;
 		this.die2 = die2;

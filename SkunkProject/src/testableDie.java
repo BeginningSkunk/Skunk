@@ -16,7 +16,7 @@ public class testableDie {
 	public void roll() // note how this changes Die's state, but doesn't return
 						// anything
 	{
-		this.lastRoll = (int) (Math.random() * 6 + 1);
+		this.lastRoll = (6);// (Math.random() * 6 + 1);
 	}
 
 	@Override
