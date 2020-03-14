@@ -2,7 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class DiceTest {
+class TestDice {
 
 	@Test
 	void test1() {
@@ -25,5 +25,6 @@ class DiceTest {
 		fail("Not yet implemented");
 	}
 	
+
 
 }
