@@ -14,7 +14,10 @@ public class TestDie
 	
 	@Test
 	void test2() {
-		fail("Not yet implemented");
+		testableDie die = new testableDie();
+		die.getLastRoll();
+		assertNotEquals(die.getLastRoll(), A);
+		
 	}
 	@Test
 	void test3() {
