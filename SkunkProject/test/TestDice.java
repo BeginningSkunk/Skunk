@@ -40,5 +40,11 @@ class TestDice {
         dice.getLastRoll();
         assertNotEquals(dice.getLastRoll(), 1);
 	}
+	@Test
+	void test6() {
+		testableDice dice = new testableDice();
+        dice.getLastRoll();
+        assertNotEquals(dice.getLastRoll(), 6);
+	}
 	
 }
