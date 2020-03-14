@@ -1,11 +1,13 @@
-import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.fail;
+  
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import edu.princeton.cs.introcs.StdOut;
 
 public class TestDie
 {
-
+	@Test
 	void test1() {
         testableDie die = new testableDie();
         die.getLastRoll();
@@ -16,20 +18,26 @@ public class TestDie
 	void test2() {
 		testableDie die = new testableDie();
 		die.getLastRoll();
-		assertNotEquals(die.getLastRoll(), A);
+		assertNotEquals(die.getLastRoll(), "A");
 		
 	}
 	@Test
 	void test3() {
-		fail("Not yet implemented");
+		testableDie die = new testableDie();
+		die.getLastRoll();
+		assertNotEquals(die.getLastRoll(), "!");
 	}
 	@Test
 	void test4() {
-		fail("Not yet implemented");
+		testableDie die = new testableDie();
+		die.getLastRoll();
+		assertNotEquals(die.getLastRoll(), "?");
 	}
 	@Test
 	void test5() {
-		fail("Not yet implemented");
+		testableDie die = new testableDie();
+		die.getLastRoll();
+		assertNotEquals(die.getLastRoll(), -1);
 	}
 	
 
