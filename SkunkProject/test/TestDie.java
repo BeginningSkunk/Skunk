@@ -6,10 +6,12 @@ import org.junit.Test;
 public class TestDie
 {
 
-	@Test
 	void test1() {
-		fail("Not yet implemented");
+        testableDie die = new testableDie();
+        die.getLastRoll();
+        assertEquals(die.getLastRoll(), 6);
 	}
+	
 	@Test
 	void test2() {
 		fail("Not yet implemented");
