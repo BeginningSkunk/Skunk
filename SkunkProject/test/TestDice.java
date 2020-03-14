@@ -8,26 +8,43 @@ class TestDice {
 
 	@Test
 	void test1() {
-        testableDie die = new testableDie();
-        die.getLastRoll();
-        assertEquals(die.getLastRoll(), 6);
-    
-	}
+        testableDice dice = new testableDice();
+        dice.getLastRoll();
+        assertEquals(dice.getLastRoll(), 12);
+    }
 	@Test
 	void test2() {
-		fail("Not yet implemented");
+	testableDice dice = new testableDice();
+        testableDie die1 = new testableDie();
+        testableDie die2 = new testableDie();
+        int total = die1.getLastRoll() + die2.getLastRoll();
+	dice.getLastRoll();
+		
+	assertEquals(dice.getLastRoll(), total);
 	}
 	@Test
 	void test3() {
-		fail("Not yet implemented");
+	testableDice dice = new testableDice();
+        dice.getLastRoll();
+        assertNotEquals(dice.getLastRoll(), 13);
 	}
 	@Test
 	void test4() {
-		fail("Not yet implemented");
+	testableDice dice = new testableDice();
+        dice.getLastRoll();
+        assertNotEquals(dice.getLastRoll(), -12);
 	}
 	@Test
 	void test5() {
-		fail("Not yet implemented");
+	testableDice dice = new testableDice();
+        dice.getLastRoll();
+        assertNotEquals(dice.getLastRoll(), 1);
+	}
+	@Test
+	void test6() {
+	testableDice dice = new testableDice();
+        dice.getLastRoll();
+        assertNotEquals(dice.getLastRoll(), 6);
 	}
 	
 }
