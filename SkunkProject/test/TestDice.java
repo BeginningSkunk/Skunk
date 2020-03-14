@@ -24,15 +24,21 @@ class TestDice {
 	}
 	@Test
 	void test3() {
-		fail("Not yet implemented");
+		testableDice dice = new testableDice();
+        dice.getLastRoll();
+        assertNotEquals(dice.getLastRoll(), 13);
 	}
 	@Test
 	void test4() {
-		fail("Not yet implemented");
+		testableDice dice = new testableDice();
+        dice.getLastRoll();
+        assertNotEquals(dice.getLastRoll(), -12);
 	}
 	@Test
 	void test5() {
-		fail("Not yet implemented");
+		testableDice dice = new testableDice();
+        dice.getLastRoll();
+        assertNotEquals(dice.getLastRoll(), 1);
 	}
 	
 }
