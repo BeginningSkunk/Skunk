@@ -5,6 +5,7 @@ import edu.princeton.cs.introcs.StdOut;
 
 public class Player {	
 	String name;	
+	int cummulativeScore;
 	Scanner Input = new Scanner(System.in);
 		
 	
@@ -20,6 +21,14 @@ public class Player {
 		
 		this.name = Input.toString();
 	}	
+	
+	int getTotalScore(){
+        return cummulativeScore;
+    }
+	
+	public void setTotalScore(int turn){
+        cummulativeScore += turn;
+    }
 		
 	} 
  

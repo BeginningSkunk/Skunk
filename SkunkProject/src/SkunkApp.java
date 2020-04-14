@@ -6,47 +6,87 @@ import edu.princeton.cs.introcs.StdOut;
 public class SkunkApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Dice dice1 = new Dice();
 		Player player = new Player();
 		String name;
-		int winningScore;
+		int winningScore = 100;
+		int numberPlayers;
 		
-		StdOut.println("Rules: Every player rolls dice twice per turn.");
-        StdOut.println("If both rolls have the same value, the player scores twice the sum of the two dice rolls.");
-        StdOut.println("If both rolls have different values, the player scores the sum of the rolls.");
-        StdOut.println("For each player, the result is cummulated after each turn.");
-        StdOut.println("First player to reach or exceed the chosen maxScore wins");
-
-		player.setName();
-		StdOut.println("Hello " +player.getName().toString());
-		
-//		Scanner n = new Scanner(System.in);
-//		name = n.nextLine();
-//		player.setName(n);
-		
-        StdOut.println("Please enter the maximum score required to win: ");
-        Scanner sc = new Scanner(System.in);
-        winningScore = sc.nextInt();
-
-     
-		
-		StdOut.println(player.getName()+"Will you roll? (yes/no)");
-		Scanner scan = new Scanner(System.in);
-        String input = scan.nextLine();	      
-    
-		if (input.equals("yes")) {
-			dice1.roll();
-			StdOut.println("Player " + player.getName()+ " rolled "+ dice1.getLastRoll());
-			StdOut.println(dice1.toString());
+		StdOut.println("Number of players in the game: ");
+	    Scanner p = new Scanner(System.in);
+	    numberPlayers = p.nextInt();
+	    int count = 1;
+	    for (count=1; count<=numberPlayers; count++) {
+	    	StdOut.println("Type name of player " +count);
+			Scanner pl = new Scanner(System.in);
+	        String names = pl.nextLine();
+	    }
+	    
+	    StdOut.println("Would you like to know the rules?  (yes/no) ");
+	    Scanner rules = new Scanner(System.in);
+        String in = rules.nextLine();
+	    if (in.equals("yes")) {
+	    	StdOut.println("Rules: Every player rolls dice twice per turn.");
+	        StdOut.println("If both rolls have the same value, the player scores twice the sum of the two dice rolls.");
+	        StdOut.println("If both rolls have different values, the player scores the sum of the rolls.");
+	        StdOut.println("For each player, the result is cummulated after each turn.");
+	        StdOut.println("First player to reach or exceed 100 wins");
 			}
-		else if (input.equals("no")) {
-			System.out.println("Round complete");
+		else if (in.equals("no")) {
+			System.out.println("Then let's begin!");
 			}	
 		else {
 				StdOut.println("Please type 'yes' or 'no' and hit enter");
+		}
+     ////////////
+	    while(player.cummulativeScore <111) {
+	    	
+			if (player.cummulativeScore>=100) {
+				StdOut.println("Winner winner we have a winner!!!!");
+				StdOut.println("Game over.");
+				break;
 			}
-		
+			else
+			{
+				StdOut.println(player.getName()+"Will you roll? (yes/no)");
+				Scanner scan = new Scanner(System.in);
+		        String input = scan.nextLine();	
+		        int turn = 0;
+				if (input.equals("yes")) {
+					dice1.roll();
+					StdOut.println("Player " + player.getName()+ " rolled "+ dice1.getLastRoll());
+					StdOut.println(dice1.toString());
+					if (dice1.getLastRoll() == 2) {
+						//if the 2 dice together = 2 then snake eyes
+						player.cummulativeScore = 0;
+						StdOut.println("Oh no!!! Double skunk thrown, lose all cummulative points.");
+						StdOut.println("Current score: "+player.cummulativeScore);
+					}
+					else if (dice1.die1.getLastRoll() == 1 || dice1.die2.getLastRoll() == 1) {
+						turn= 0;
+						StdOut.println("So sad. Skunk thrown, no points this turn. Count yourself lucky.");
+						StdOut.println("Current score: "+player.cummulativeScore);
+					}
+					else if (dice1.die1.getLastRoll()== dice1.die2.getLastRoll() && dice1.getLastRoll()!=2) {
+						turn = dice1.getLastRoll()*2;
+						player.setTotalScore(turn);
+						StdOut.println("Lucky you! Doubles means twice the points- Congrats");
+						StdOut.println("Current score: "+player.cummulativeScore);
+					}
+					else
+						turn = dice1.getLastRoll();
+						player.setTotalScore(turn);
+						StdOut.println("Nice work. Face value is added to your cummulative score.");
+						StdOut.println("Current score: "+player.cummulativeScore);
+				}
+				else if (input.equals("no")) {
+					System.out.println("Round complete");
+					}	
+				else {
+						StdOut.println("Please type 'yes' or 'no' and hit enter");
+					}
+			}
+	    }
 		//as well as a final end-of-turn summary when the turn is over.  
 		//Roll outcome reporting should include the name of the player, 
 		//the value of each thrown die within a roll of the dice, 
@@ -67,5 +107,4 @@ public class SkunkApp {
 		
 		
 	}
-
 }

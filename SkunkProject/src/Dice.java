@@ -1,23 +1,13 @@
 import edu.princeton.cs.introcs.StdOut;
 
-/**
- * Dice represents a single pair of rollable Die objects, randomly generating
- * sums of their two values
- * 
- * This is a Javadoc comment: add more to your finished class below
- * 
- * @author eric
- *
- */
-
 public class Dice
 {
 	// Instance fields (variables) may be declared anywhere in class body
 	// Convention: put at top
 
 	private int lastRoll;
-	private Die die1;
-	private Die die2;
+	public Die die1;
+	public Die die2;
 
 	// Constructors (object initializers) also can be declared anywhere
 	// Convention: after instance fields/variables
