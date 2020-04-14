@@ -56,7 +56,7 @@ public class SkunkApp {
 					dice1.roll();
 					StdOut.println("Player " + player.getName()+ " rolled "+ dice1.getLastRoll());
 					StdOut.println(dice1.toString());
-					if (dice1.getLastRoll() == 2) {
+					if (dice1.die1.getLastRoll() == 1 && dice1.die2.getLastRoll() == 1) {
 						//if the 2 dice together = 2 then snake eyes
 						player.cummulativeScore = 0;
 						StdOut.println("Oh no!!! Double skunk thrown, lose all cummulative points.");
@@ -67,18 +67,18 @@ public class SkunkApp {
 						StdOut.println("So sad. Skunk thrown, no points this turn. Count yourself lucky.");
 						StdOut.println("Current score: "+player.cummulativeScore);
 					}
-					else if (dice1.die1.getLastRoll()== dice1.die2.getLastRoll() && dice1.getLastRoll()!=2) {
+					else if (dice1.die1.getLastRoll()== dice1.die2.getLastRoll() && dice1.die1.getLastRoll() != 1) {
 						turn = dice1.getLastRoll()*2;
 						player.setTotalScore(turn);
 						StdOut.println("Lucky you! Doubles means twice the points- Congrats");
 						StdOut.println("Current score: "+player.cummulativeScore);
 					}
-					else
+					else {
 						turn = dice1.getLastRoll();
 						player.setTotalScore(turn);
 						StdOut.println("Nice work. Face value is added to your cummulative score.");
 						StdOut.println("Current score: "+player.cummulativeScore);
-				}
+				}}
 				else if (input.equals("no")) {
 					System.out.println("Round complete");
 					}	
