@@ -86,6 +86,7 @@ public class SkunkApp {
 						StdOut.println("Please type 'yes' or 'no' and hit enter");
 					}
 			}
+			
 	    }
 		//as well as a final end-of-turn summary when the turn is over.  
 		//Roll outcome reporting should include the name of the player, 

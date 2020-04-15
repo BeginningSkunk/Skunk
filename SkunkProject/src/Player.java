@@ -20,6 +20,7 @@ public class Player {
         name = Input.nextLine();
 		
 		this.name = Input.toString();
+		Input.close();
 	}	
 	
 	int getTotalScore(){
