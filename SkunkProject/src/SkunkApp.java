@@ -5,13 +5,30 @@ import edu.princeton.cs.introcs.StdOut;
 
 public class SkunkApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {  //there are some unused variables 
 		Dice dice1 = new Dice();
+		
 		Player player = new Player();
-		String name;
-		int winningScore = 100;
+		
 		int numberPlayers;
 		
+		
+		//String name;    --No need for this  code works wo it
+		//int winningScore = 100;  --- no need for this. code works wo it
+		
+	
+		
+		
+		
+		
+//	    public String playerSetup() {
+//			System.out.println("What is your name?");
+//			player = answer.next();
+//			return player
+		
+		
+		
+		//Entering players names ---issue starts here 
 		StdOut.println("Number of players in the game: ");
 	    Scanner p = new Scanner(System.in);
 	    numberPlayers = p.nextInt();
@@ -105,8 +122,6 @@ public class SkunkApp {
 		//Information should also be displayed about the outcome of each 
 		//roll and the final outcome of the turn.
 		
-		
-		
-		
+
 	}
 }

@@ -15,7 +15,7 @@ public class Player {
 	
 	
 	public void setName() {
-		StdOut.println("Enter player name: ");
+		 
 		Scanner Input = new Scanner(System.in);
         name = Input.nextLine();
 		
@@ -32,4 +32,7 @@ public class Player {
     }
 		
 	} 
- 
+//public String playerSetup() {
+//	System.out.println("What is your name?");
+//	player = answer.next();
+//	return player;
