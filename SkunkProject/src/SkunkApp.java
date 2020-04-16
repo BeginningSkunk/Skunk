@@ -26,11 +26,12 @@ public class SkunkApp {
 	    Scanner rules = new Scanner(System.in);
         String in = rules.nextLine();
 	    if (in.equals("yes")) {
-	    	StdOut.println("Rules: Every player rolls dice twice per turn.");
-	        StdOut.println("If both rolls have the same value, the player scores twice the sum of the two dice rolls.");
-	        StdOut.println("If both rolls have different values, the player scores the sum of the rolls.");
-	        StdOut.println("For each player, the result is cummulated after each turn.");
-	        StdOut.println("First player to reach or exceed 100 wins");
+	    	StdOut.println("Rules: "
+	    			+ "\nEvery player rolls dice twice per turn."
+	    			+ "\nIf both rolls have the same value, the player scores twice the sum of the two dice rolls."
+	    			+ "\nIf both rolls have different values, the player scores the sum of the rolls."
+	    			+ "\nFor each player, the result is cummulated after each turn."
+	    			+ "\nFirst player to reach or exceed 100 wins");
 			}
 		else if (in.equals("no")) {
 			System.out.println("Then let's begin!");
