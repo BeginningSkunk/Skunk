@@ -48,7 +48,7 @@ public class SkunkApp {
 			}
 			else
 			{
-				StdOut.println(player.getName()+"Will you roll? (yes/no)");
+				StdOut.println(player.getName()+ " " + "Will you roll? (yes/no)");
 				Scanner scan = new Scanner(System.in);
 		        String input = scan.nextLine();	
 		        int turn = 0;
