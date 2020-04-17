@@ -5,7 +5,7 @@ import edu.princeton.cs.introcs.StdOut;
 
 public class SkunkApp {
 
-	public static void main(String[] args) {  //there are some unused variables 
+	public static void main(String[] args) {  
 		Dice dice1 = new Dice();
 		
 		Player player = new Player();
@@ -13,22 +13,6 @@ public class SkunkApp {
 		int numberPlayers;
 		
 		
-		//String name;    --No need for this  code works wo it
-		//int winningScore = 100;  --- no need for this. code works wo it
-		
-	
-		
-		
-		
-		
-//	    public String playerSetup() {
-//			System.out.println("What is your name?");
-//			player = answer.next();
-//			return player
-//		
-		
-		
-
 		StdOut.println("Number of players in the game: ");
 	    Scanner p = new Scanner(System.in);
 	    numberPlayers = p.nextInt();
@@ -37,7 +21,7 @@ public class SkunkApp {
 	    	StdOut.println("Type name of player " +count);
 			Scanner pl = new Scanner(System.in);
 			player.setName(pl.nextLine());
-	      //  String names = pl.nextLine();
+	      
 	    }
 	    
 	    StdOut.println("Would you like to know the rules?  (yes/no) ");

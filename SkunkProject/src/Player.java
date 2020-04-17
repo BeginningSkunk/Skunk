@@ -17,11 +17,7 @@ public class Player {
 	public void setName(String string) {
 		this.name = string;
 		
-	//	Scanner Input = new Scanner(System.in);
-     //   name = Input.nextLine();
-		
-	//	this.name = Input.toString();
-	//	Input.close();
+	
 	}	
 	
 	int getTotalScore(){
@@ -33,7 +29,3 @@ public class Player {
     }
 		
 	} 
-//public String playerSetup() {
-//	System.out.println("What is your name?");
-//	player = answer.next();
-//	return player;
