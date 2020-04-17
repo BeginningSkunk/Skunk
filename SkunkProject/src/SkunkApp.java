@@ -19,7 +19,8 @@ public class SkunkApp {
 	    for (count=1; count<=numberPlayers; count++) {
 	    	StdOut.println("Type name of player " +count);
 			Scanner pl = new Scanner(System.in);
-	        String names = pl.nextLine();
+			player.setName(pl.nextLine());
+	     //   String names = pl.nextLine();
 	    }
 	    
 	    StdOut.println("Would you like to know the rules?  (yes/no) ");
