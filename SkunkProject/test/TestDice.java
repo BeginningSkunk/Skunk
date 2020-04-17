@@ -48,4 +48,5 @@ class TestDice {
         assertNotEquals(dice.getLastRoll(), 6);
 	}
 	
+	
 }

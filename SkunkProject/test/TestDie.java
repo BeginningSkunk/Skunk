@@ -39,7 +39,25 @@ public class TestDie
 		die.getLastRoll();
 		assertNotEquals(die.getLastRoll(), -1);
 	}
+	@Test
+	void test6() {
+		testableDie die = new testableDie();
+		die.getLastRoll();
+		assertNotEquals(die.getLastRoll(), 0);
+	}
 	
-
-
+	@Test
+	void test7() {
+		testableDie die = new testableDie();
+		die.getLastRoll();
+		assertNotEquals(die.getLastRoll(), 125);
+	}
+	
+	@Test
+	void test8() {
+		testableDie die = new testableDie();
+		int val = die.getLastRoll();
+		boolean range = (val > 0 && val < 7);
+		assertTrue(range);
+	}
 }

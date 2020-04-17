@@ -23,6 +23,7 @@ public class SkunkApp {
 			player.setName(pl.nextLine());
 	      
 	    }
+	       
 	    
 	    StdOut.println("Would you like to know the rules?  (yes/no) ");
 	    Scanner rules = new Scanner(System.in);
@@ -84,8 +85,10 @@ public class SkunkApp {
 				}}
 				else if (input.equals("no")) {
 					System.out.println("Round complete");
+					
 					}	
 				else {
+					
 						StdOut.println("Please type 'yes' or 'no' and hit enter");
 					}
 			}
