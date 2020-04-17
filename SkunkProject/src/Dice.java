@@ -64,7 +64,7 @@ public class Dice
 
 	public static void main(String[] args)
 	{
-		// simulate repeated rolls of Dice, counting the many double skunks
+		/// simulate repeated rolls of Dice, counting the many double skunks
 		
 		Dice dice = new Dice();
 		int doubleSkunkCount = 0;

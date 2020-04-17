@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import edu.princeton.cs.introcs.StdOut;
 
 public class TestDie
-{
+{ 
 	@Test
 	void test1() {
         testableDie die = new testableDie();
