@@ -5,13 +5,30 @@ import edu.princeton.cs.introcs.StdOut;
 
 public class SkunkApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {  //there are some unused variables 
 		Dice dice1 = new Dice();
+		
 		Player player = new Player();
-		String name;
-		int winningScore = 100;
+		
 		int numberPlayers;
 		
+		
+		//String name;    --No need for this  code works wo it
+		//int winningScore = 100;  --- no need for this. code works wo it
+		
+	
+		
+		
+		
+		
+//	    public String playerSetup() {
+//			System.out.println("What is your name?");
+//			player = answer.next();
+//			return player
+		
+		
+		
+		//Entering players names ---issue starts here 
 		StdOut.println("Number of players in the game: ");
 	    Scanner p = new Scanner(System.in);
 	    numberPlayers = p.nextInt();
@@ -20,18 +37,19 @@ public class SkunkApp {
 	    	StdOut.println("Type name of player " +count);
 			Scanner pl = new Scanner(System.in);
 			player.setName(pl.nextLine());
-	     //   String names = pl.nextLine();
+	      //  String names = pl.nextLine();
 	    }
 	    
 	    StdOut.println("Would you like to know the rules?  (yes/no) ");
 	    Scanner rules = new Scanner(System.in);
         String in = rules.nextLine();
 	    if (in.equals("yes")) {
-	    	StdOut.println("Rules: Every player rolls dice twice per turn.");
-	        StdOut.println("If both rolls have the same value, the player scores twice the sum of the two dice rolls.");
-	        StdOut.println("If both rolls have different values, the player scores the sum of the rolls.");
-	        StdOut.println("For each player, the result is cummulated after each turn.");
-	        StdOut.println("First player to reach or exceed 100 wins");
+	    	StdOut.println("Rules: "
+	    			+ "\nEvery player rolls dice twice per turn."
+	    			+ "\nIf both rolls have the same value, the player scores twice the sum of the two dice rolls."
+	    			+ "\nIf both rolls have different values, the player scores the sum of the rolls."
+	    			+ "\nFor each player, the result is cummulated after each turn."
+	    			+ "\nFirst player to reach or exceed 100 wins");
 			}
 		else if (in.equals("no")) {
 			System.out.println("Then let's begin!");
@@ -105,8 +123,6 @@ public class SkunkApp {
 		//Information should also be displayed about the outcome of each 
 		//roll and the final outcome of the turn.
 		
-		
-		
-		
+
 	}
 }
