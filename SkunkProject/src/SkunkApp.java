@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import edu.princeton.cs.introcs.StdIn;
@@ -11,18 +12,37 @@ public class SkunkApp {
 		Player player = new Player();
 		
 		int numberPlayers;
+		String[] playerNames;
+		ArrayList<Player> players;
+		int kitty;
+		Player activePlayer;
+		int activePlayerIndex;
+		playerNames = new String[50];
+		players = new ArrayList<Player>();
 		
 		
 		StdOut.println("Number of players in the game: ");
 	    Scanner p = new Scanner(System.in);
 	    numberPlayers = p.nextInt();
-	    int count = 1;
-	    for (count=1; count<=numberPlayers; count++) {
-	    	StdOut.println("Type name of player " +count);
-			Scanner pl = new Scanner(System.in);
-			player.setName(pl.nextLine());
-	      
-	    }
+	    
+	    for (int count = 0; count < numberPlayers; count++)
+		{
+	    	StdOut.println("Type name of player " + (count + 1) );
+			playerNames[count] = StdIn.readLine();
+			players.add(new Player());
+		}
+		activePlayerIndex = 0;
+		activePlayer = players.get(activePlayerIndex);
+
+		
+		
+//	    int count = 1;
+//	    for (count=1; count<=numberPlayers; count++) {
+//	    	StdOut.println("Type name of player " +count);
+//			Scanner pl = new Scanner(System.in);
+//			player.setName(pl.nextLine());
+//	      
+//	    }
 	       
 	    
 	    StdOut.println("Would you like to know the rules?  (yes/no) ");
@@ -47,29 +67,41 @@ public class SkunkApp {
 	    	
 			if (player.cummulativeScore>=100) {
 				StdOut.println("Winner winner we have a winner!!!!");
+				StdOut.println("Congratulations " +playerNames[activePlayerIndex]);
 				StdOut.println("Game over.");
 				break;
 			}
 			else
 			{
-				StdOut.println(player.getName()+ " " + "Will you roll? (yes/no)");
+							
+				StdOut.println(playerNames[activePlayerIndex]+ " " + ", will you roll? (yes/no)");
+				
 				Scanner scan = new Scanner(System.in);
 		        String input = scan.nextLine();	
 		        int turn = 0;
-				if (input.equals("yes")) {
+				if (input.equals("yes")|| input.equals("y")) {
 					dice1.roll();
-					StdOut.println("Player " + player.getName()+ " rolled "+ dice1.getLastRoll());
+					StdOut.println("Player " + playerNames[activePlayerIndex]+ " rolled "+ dice1.getLastRoll());
 					StdOut.println(dice1.toString());
 					if (dice1.die1.getLastRoll() == 1 && dice1.die2.getLastRoll() == 1) {
 						//if the 2 dice together = 2 then snake eyes
 						player.cummulativeScore = 0;
 						StdOut.println("Oh no!!! Double skunk thrown, lose all cummulative points.");
 						StdOut.println("Current score: "+player.cummulativeScore);
+						//add kitty arguments. must add 4 chips
+						
+					}
+					else if (dice1.getLastRoll() == 3) {
+						turn= 0;
+						StdOut.println("A deuce and a skunk thrown, no points. Try not to cry.");
+						StdOut.println("Current score: "+player.cummulativeScore);
+						//add kitty arguments. must add 2 chips.
 					}
 					else if (dice1.die1.getLastRoll() == 1 || dice1.die2.getLastRoll() == 1) {
 						turn= 0;
 						StdOut.println("So sad. Skunk thrown, no points this turn. Count yourself lucky.");
 						StdOut.println("Current score: "+player.cummulativeScore);
+						//again, need another kitty argument, adds 1 chip
 					}
 					else if (dice1.die1.getLastRoll()== dice1.die2.getLastRoll() && dice1.die1.getLastRoll() != 1) {
 						turn = dice1.getLastRoll()*2;
@@ -83,7 +115,7 @@ public class SkunkApp {
 						StdOut.println("Nice work. Face value is added to your cummulative score.");
 						StdOut.println("Current score: "+player.cummulativeScore);
 				}}
-				else if (input.equals("no")) {
+				else if (input.equals("no")||input.equals("n")) {
 					System.out.println("Round complete");
 					
 					}	
@@ -91,6 +123,10 @@ public class SkunkApp {
 					
 						StdOut.println("Please type 'yes' or 'no' and hit enter");
 					}
+				StdOut.println("End of turn for " + playerNames[activePlayerIndex]);
+				
+				activePlayerIndex = (activePlayerIndex + 1) % numberPlayers;
+				activePlayer = players.get(activePlayerIndex);
 			}
 			
 	    }
