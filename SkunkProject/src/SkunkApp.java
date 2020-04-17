@@ -25,10 +25,10 @@ public class SkunkApp {
 //			System.out.println("What is your name?");
 //			player = answer.next();
 //			return player
+//		
 		
 		
-		
-		//Entering players names ---issue starts here 
+
 		StdOut.println("Number of players in the game: ");
 	    Scanner p = new Scanner(System.in);
 	    numberPlayers = p.nextInt();
