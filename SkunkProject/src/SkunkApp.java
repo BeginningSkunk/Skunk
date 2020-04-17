@@ -79,16 +79,25 @@ public class SkunkApp {
 				Scanner scan = new Scanner(System.in);
 		        String input = scan.nextLine();	
 		        int turn = 0;
+		        
 				if (input.equals("yes")|| input.equals("y")) {
 					dice1.roll();
 					StdOut.println("Player " + playerNames[activePlayerIndex]+ " rolled "+ dice1.getLastRoll());
 					StdOut.println(dice1.toString());
+					int chips = 0;
 					if (dice1.die1.getLastRoll() == 1 && dice1.die2.getLastRoll() == 1) {
 						//if the 2 dice together = 2 then snake eyes
 						player.cummulativeScore = 0;
 						StdOut.println("Oh no!!! Double skunk thrown, lose all cummulative points.");
 						StdOut.println("Current score: "+player.cummulativeScore);
 						//add kitty arguments. must add 4 chips
+//						chips += 4;
+//						activePlayer.setChipTotal(activePlayer.getChipTotal() - 4);
+//						StdOut.println("Penalty of 4 chips");
+//						StdOut.println("Current chips: " +activePlayer.getChipTotal());
+						activePlayer.totalChips+= -4;
+						StdOut.println("Penalty of 4 chips");
+						StdOut.println("Current Chips " +activePlayer.totalChips);
 						
 					}
 					else if (dice1.getLastRoll() == 3) {
@@ -96,24 +105,53 @@ public class SkunkApp {
 						StdOut.println("A deuce and a skunk thrown, no points. Try not to cry.");
 						StdOut.println("Current score: "+player.cummulativeScore);
 						//add kitty arguments. must add 2 chips.
+						//chips += 2;
+						activePlayer.totalChips+= -2;
+						StdOut.println("Penalty of 2 chips");
+						StdOut.println("Current Chips " +activePlayer.totalChips);
+						
+						//activePlayer.setChipTotal(activePlayer.getChipTotal() - 2);
+						//StdOut.println("Penalty of 2 chips");
+						//StdOut.println("Current chips: "+activePlayer.getChipTotal());
 					}
 					else if (dice1.die1.getLastRoll() == 1 || dice1.die2.getLastRoll() == 1) {
 						turn= 0;
 						StdOut.println("So sad. Skunk thrown, no points this turn. Count yourself lucky.");
 						StdOut.println("Current score: "+player.cummulativeScore);
 						//again, need another kitty argument, adds 1 chip
+//						chips += 1;
+//						activePlayer.setChipTotal(activePlayer.getChipTotal() - 1);
+//						StdOut.println("Penalty of 1 chips");
+//						StdOut.println("Current chips: "+activePlayer.getChipTotal());
+						activePlayer.totalChips+= -1;
+						StdOut.println("Penalty of 1 chips");
+						StdOut.println("Current Chips " +activePlayer.totalChips);
 					}
 					else if (dice1.die1.getLastRoll()== dice1.die2.getLastRoll() && dice1.die1.getLastRoll() != 1) {
 						turn = dice1.getLastRoll()*2;
 						player.setTotalScore(turn);
 						StdOut.println("Lucky you! Doubles means twice the points- Congrats");
 						StdOut.println("Current score: "+player.cummulativeScore);
+//						chips += 0;
+//						activePlayer.setChipTotal(activePlayer.getChipTotal() - 0);
+//						StdOut.println("Penalty of 0 chips");
+//						StdOut.println("Current chips: "+activePlayer.getChipTotal());
+						activePlayer.totalChips+= 0;
+						StdOut.println("Penalty of 0 chips");
+						StdOut.println("Current Chips " +activePlayer.totalChips);
 					}
 					else {
 						turn = dice1.getLastRoll();
 						player.setTotalScore(turn);
 						StdOut.println("Nice work. Face value is added to your cummulative score.");
 						StdOut.println("Current score: "+player.cummulativeScore);
+//						chips += 0;
+//						activePlayer.setChipTotal(activePlayer.getChipTotal() - 0);
+//						StdOut.println("Penalty of 0 chips");
+//						StdOut.println("Current chips: "+activePlayer.getChipTotal());
+						activePlayer.totalChips+= 0;
+						StdOut.println("Penalty of 0 chips");
+						StdOut.println("Current Chips " +activePlayer.totalChips);
 				}}
 				else if (input.equals("no")||input.equals("n")) {
 					System.out.println("Round complete");

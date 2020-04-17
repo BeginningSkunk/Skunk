@@ -5,6 +5,7 @@ import edu.princeton.cs.introcs.StdOut;
 
 public class Player {	
 	String name;	
+	int totalChips = 50;
 	int cummulativeScore;
 	Scanner Input = new Scanner(System.in);
 		
@@ -27,5 +28,13 @@ public class Player {
 	public void setTotalScore(int turn){
         cummulativeScore += turn;
     }
-		
+	
+	
+	int getChipTotal(){
+        return totalChips;
+    }
+	
+	public void setChipTotal(int chips){
+        totalChips -= chips;
+    }
 	} 
